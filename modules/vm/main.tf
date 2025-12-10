@@ -10,7 +10,7 @@ resource "google_compute_instance" "vm1" {
     }
 
     network_interface {
-        network = var.vm_network-name
+        subnetwork = var.vm_network-name
 
         access_config {
             nat_ip = var.vm_pub-ip

@@ -17,7 +17,14 @@ module "vm" {
     vm_instance-zone     = var.vm_zone
     vm_instance-image = var.vm-image
     vm_pub-ip    = module.pi.pi_out_public
-    vm_network-name = var.network-name
+    vm_network-name = module.vpc.subnet-out-name
 
   
+}
+
+module "vpc" {
+    source = "./modules/vpc"
+    vpc_name       = "my-vpc-network"
+    vpc_project-id = var.project-id
+    vpc_region     = var.region
 }
