@@ -7,3 +7,6 @@ variable "region" {
 variable "bucketname" {
   
 }
+variable "pubip-name" {
+  
+}
